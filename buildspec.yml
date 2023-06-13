@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    commands:
+      - echo "Installing dependencies"
+      # Add any commands to install dependencies here (if needed)
+
+  pre_build:
+    commands:
+      - echo "Compiling the source code"
+      - javac Test.java
+
+  build:
+    commands:
+      - echo "Running tests"
+      - java Test
+
+artifacts:
+  files:
+    - '**/*'
